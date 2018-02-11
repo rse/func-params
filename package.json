@@ -2,7 +2,7 @@
     "name":        "func-params",
     "homepage":    "https://github.com/rse/func-params",
     "description": "Run-Time Function Parameter Name Determination",
-    "version":     "0.9.0",
+    "version":     "0.9.1",
     "license":     "MIT",
     "author": {
         "name":    "Ralf S. Engelschall",
