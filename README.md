@@ -16,6 +16,12 @@ About
 This is a tiny JavaScript function for determining the names of the
 parameters of a function under run-time. It can be used as the building
 block for Dependency Injection or Named-Parameter implementations.
+The underlying problem is that there is no official JavaScript API
+to determine the names of the parameters of a function under run-time,
+except the ECMAScript 2015 `Function.prototype.toString()`. This
+library determines the names of the function parameters by parsing
+the source code of `Function.prototype.toString()`. Its parsing is not
+100%, but is able to handle even complex syntax scenarios.
 
 Installation
 ------------

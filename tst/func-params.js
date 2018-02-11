@@ -24,7 +24,7 @@
 
 var funcParams = require("../lib/func-params.node.js")
 
-describe("FNA Library", function () {
+describe("func-params library", function () {
     it("should expose the official API", function () {
         expect(funcParams).to.be.a("function")
     })
