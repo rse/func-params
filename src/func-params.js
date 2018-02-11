@@ -24,13 +24,25 @@
 
 /*  external dependency  */
 const Tokenizr = require("tokenizr")
+const CacheLRU = require("cache-lru")
+
+/*  create global cache  */
+const cache = new CacheLRU()
 
 /*  the API function: compress a GraphQL query string  */
-function funcParams (fn) {
+function funcParams (fn, caching = true) {
     /*  determine function source code  */
     let src
     try { src = fn.toString() }
     catch (ex) { src = "function () {}" }
+
+    /*  optionally fetch from cache  */
+    let key = src
+    if (caching) {
+        let args = cache.get(key)
+        if (typeof args === "object" && args instanceof Array)
+            return args
+    }
 
     /*  PASS 1: PREPROCESSING
         - replace special case of "class ..." functions
@@ -119,6 +131,11 @@ function funcParams (fn) {
             args.push(token)
         })
     }
+
+    /*  optionally store to cache  */
+    if (caching)
+        cache.set(key, args)
+
     return args
 }
 

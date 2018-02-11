@@ -49,7 +49,8 @@
         "browserify-derequire":           "~0.9.4"
     },
     "dependencies" : {
-        "tokenizr":                       "~1.2.1"
+        "tokenizr":                       "~1.2.1",
+        "cache-lru":                      "~1.0.18"
     },
     "engines": {
         "node":                           ">=8.0.0"
