@@ -86,7 +86,8 @@ module.exports = function (grunt) {
                         "browserify-header"
                     ],
                     external: [
-                        "tokenizr"
+                        "tokenizr",
+                        "cache-lru"
                     ],
                     browserifyOptions: {
                         standalone: "funcParams",
