@@ -29,7 +29,7 @@ const CacheLRU = require("cache-lru")
 /*  create global cache  */
 const cache = new CacheLRU()
 
-/*  the API function: compress a GraphQL query string  */
+/*  the API function  */
 function funcParams (fn, caching = true) {
     /*  determine function source code  */
     let src
