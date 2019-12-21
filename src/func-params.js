@@ -37,9 +37,9 @@ function funcParams (fn, caching = true) {
     catch (ex) { src = "function () {}" }
 
     /*  optionally fetch from cache  */
-    let key = src
+    const key = src
     if (caching) {
-        let args = cache.get(key)
+        const args = cache.get(key)
         if (typeof args === "object" && args instanceof Array)
             return args
     }
@@ -120,7 +120,7 @@ function funcParams (fn, caching = true) {
     /*  PASS 5: SPLITTING
         - split at commas
         - finally remove default assignments  */
-    let args = []
+    const args = []
     src = src.replace(/^\s+$/, "")
     if (src !== "") {
         src.split(/\s*,\s*/).forEach((token) => {
